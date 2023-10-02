@@ -17,7 +17,6 @@ function getComputerChoice(){
 let score=0;
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt("Rock Paper or Scissors?","").toLowerCase();
     computerSelection = getComputerChoice();
     switch(playerSelection){
         case "rock":
@@ -61,10 +60,27 @@ function playRound(playerSelection, computerSelection) {
     }
   }
    
-function game(){
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    console.log(score)
+
+  
+const rock=document.querySelector('#rock')
+rock.addEventListener('click',()=>{
+    playRound("rock",computerSelection)
+    winner();
+})
+const paper=document.querySelector('#paper')
+paper.addEventListener('click',()=>{
+    playRound("paper",computerSelection)
+    winner();
+})
+const scissors=document.querySelector('#scissors')
+scissors.addEventListener('click',()=>{
+    playRound("scissors",computerSelection) 
+    winnter();
+})
+function winner(){
+    const scorehtml=document.querySelector('#score')
+    scorehtml.textContent=`Score: ${score}`; 
+    if (score>=5){
+        scorehtml.textContent=`Score: ${score} YAY YOU WIN`;
+    }
 }
-game()
