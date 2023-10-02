@@ -75,7 +75,7 @@ paper.addEventListener('click',()=>{
 const scissors=document.querySelector('#scissors')
 scissors.addEventListener('click',()=>{
     playRound("scissors",computerSelection) 
-    winnter();
+    winner();
 })
 function winner(){
     const scorehtml=document.querySelector('#score')
